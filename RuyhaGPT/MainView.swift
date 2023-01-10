@@ -10,15 +10,15 @@ import SwiftUI
 struct MainView: View {
     @ObservedObject var mainViewModel = MainViewModel()
     @State var text = ""
-    @State var model = [String]()
+    @State var model = [Message]()
     
     var body: some View {
         
         VStack(alignment: .leading) {
             ScrollView{
                 VStack(alignment: .leading){
-                    ForEach(model, id: \.self){ string in
-                        Text(string )
+                    ForEach(model,id: \.id) { msg in
+                        MessageBubble(message: msg)
                     }
                 }
             }
@@ -39,17 +39,19 @@ struct MainView: View {
     }
     
     func send(){
+        print("ppap!1! : \(text)")
         guard !text.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
         }
-        
-        model.append("나: \(text)")
-        self.text = ""
+        //내가 보낸 메시지 추가
+        model.append(Message(id: UUID(), text: text , received: false))
         mainViewModel.send(text: text) { reponse in
             DispatchQueue.main.async {
-                self.model.append("류하: " + reponse)
+                self.model.append(Message(id: UUID(), text: reponse , received: true))
             }
         }
+        
+        self.text = ""
     }
 }
 

@@ -13,10 +13,11 @@ final class MainViewModel : ObservableObject {
     private var client : OpenAISwift?
     
     func setup(){
-        client = OpenAISwift(authToken: "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")
+        client = OpenAISwift(authToken: "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")
     }
     
     func send(text: String, completion: @escaping (String) -> Void) {
+        print("ppap??:\(text)")
         client?.sendCompletion(with: text , maxTokens: 500  ,completionHandler: { result in
             
             switch result {
