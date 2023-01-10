@@ -18,16 +18,30 @@ final class MainViewModel : ObservableObject {
     
     func send(text: String, completion: @escaping (String) -> Void) {
         print("ppap??:\(text)")
-        client?.sendCompletion(with: text , maxTokens: 500  ,completionHandler: { result in
+        client?.sendCompletion(with: text , maxTokens: 2000  ,completionHandler: { result in
             
             switch result {
             case .success(let model):
                 let output = model.choices.first?.text ?? ""
-                completion(output)
+                completion(self.removelineBreak(text: output))
             case .failure(let error):
-                completion("ERR:"+error.localizedDescription)
+                completion("에러발생:"+error.localizedDescription)
             }
             
         })
+    }
+    
+    func removelineBreak(text:String)-> String{
+        var myArray = Array(text)
+        var count = 0
+        for x in myArray {
+            if x == "\n" {
+                count += 1
+            }else{
+                break
+            }
+        }
+        myArray.removeSubrange(0..<count)
+        return String(myArray)
     }
 }
