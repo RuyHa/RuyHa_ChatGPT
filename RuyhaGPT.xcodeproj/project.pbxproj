@@ -16,6 +16,7 @@
 		70A0DF1D296CA90300FE6C41 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A0DF1C296CA90300FE6C41 /* MessageModel.swift */; };
 		70A0DF1F296CA9B600FE6C41 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A0DF1E296CA9B600FE6C41 /* MessageBubble.swift */; };
 		70E1FC39296EAF4000EC84D2 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1FC38296EAF4000EC84D2 /* UIApplication+.swift */; };
+		70E1FC3C296EF2A300EC84D2 /* RuyhaKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1FC3B296EF2A300EC84D2 /* RuyhaKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		70A0DF1C296CA90300FE6C41 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		70A0DF1E296CA9B600FE6C41 /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
 		70E1FC38296EAF4000EC84D2 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
+		70E1FC3B296EF2A300EC84D2 /* RuyhaKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuyhaKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		70A0DF08296C980400FE6C41 /* RuyhaGPT */ = {
 			isa = PBXGroup;
 			children = (
+				70E1FC3A296EF22A00EC84D2 /* Ignore */,
 				70E1FC37296EAF2100EC84D2 /* Extension */,
 				70A0DF09296C980400FE6C41 /* RuyhaGPTApp.swift */,
 				70A0DF0B296C980400FE6C41 /* MainView.swift */,
@@ -87,6 +90,14 @@
 				70E1FC38296EAF4000EC84D2 /* UIApplication+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		70E1FC3A296EF22A00EC84D2 /* Ignore */ = {
+			isa = PBXGroup;
+			children = (
+				70E1FC3B296EF2A300EC84D2 /* RuyhaKey.swift */,
+			);
+			path = Ignore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +179,7 @@
 				70A0DF0C296C980400FE6C41 /* MainView.swift in Sources */,
 				70A0DF0A296C980400FE6C41 /* RuyhaGPTApp.swift in Sources */,
 				70E1FC39296EAF4000EC84D2 /* UIApplication+.swift in Sources */,
+				70E1FC3C296EF2A300EC84D2 /* RuyhaKey.swift in Sources */,
 				70A0DF1F296CA9B600FE6C41 /* MessageBubble.swift in Sources */,
 				70A0DF1B296C991C00FE6C41 /* MainViewModel.swift in Sources */,
 				70A0DF1D296CA90300FE6C41 /* MessageModel.swift in Sources */,

@@ -13,7 +13,8 @@ final class MainViewModel : ObservableObject {
     private var client : OpenAISwift?
     
     func setup(){
-        client = OpenAISwift(authToken: "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")
+        //https://beta.openai.com/account/api-keys 에서 키를 발급해 넣어주세요.
+        client = OpenAISwift(authToken: RuyhaKey.shared.chatGPTauthToken)
     }
     
     func send(text: String, completion: @escaping (String) -> Void) {
