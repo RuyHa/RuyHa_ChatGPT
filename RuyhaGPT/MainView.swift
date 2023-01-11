@@ -15,10 +15,17 @@ struct MainView: View {
     var body: some View {
         
         VStack(alignment: .leading) {
-            ScrollView{
-                VStack(alignment: .leading){
-                    ForEach(model,id: \.id) { msg in
-                        MessageBubble(message: msg)
+            ScrollViewReader{ proxy in
+                ScrollView{
+                    VStack(alignment: .leading){
+                        ForEach(model,id: \.id) { msg in
+                            MessageBubble(message: msg)
+                        }
+                    }
+                }
+                .onChange(of: model.last?.id) { id in
+                    withAnimation{
+                        proxy.scrollTo(id!, anchor: .bottom)
                     }
                 }
             }
@@ -39,11 +46,9 @@ struct MainView: View {
     }
     
     func send(){
-        print("ppap!1! : \(text)")
         guard !text.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
         }
-        //내가 보낸 메시지 추가
         model.append(Message(id: UUID(), text: text , received: false))
         mainViewModel.send(text: text) { reponse in
             DispatchQueue.main.async {
