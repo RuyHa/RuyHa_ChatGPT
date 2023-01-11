@@ -21,7 +21,7 @@ struct MessageBubble: View {
             .frame(maxWidth: .infinity, alignment: message.received ? .leading : .trailing)
         }
         .frame(maxWidth: .infinity, alignment: message.received ? .leading : .trailing)
-        .padding(message.received ? .leading : .trailing)
+        .padding(message.received ? .trailing : .leading)
     }
 }
 //

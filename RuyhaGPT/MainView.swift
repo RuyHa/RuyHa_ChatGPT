@@ -16,13 +16,14 @@ struct MainView: View {
         
         VStack(alignment: .leading) {
             ScrollViewReader{ proxy in
-                ScrollView{
-                    VStack(alignment: .leading){
+                ScrollView(showsIndicators: false){
+                    VStack(){
                         ForEach(model,id: \.id) { msg in
                             MessageBubble(message: msg)
                         }
                     }
                 }
+//                .background(Color.red)
                 .onChange(of: model.last?.id) { id in
                     withAnimation{
                         proxy.scrollTo(id!, anchor: .bottom)
@@ -31,8 +32,7 @@ struct MainView: View {
                 
             }
             .onAppear (perform : UIApplication.shared.hideKeyboard)
-            
-            Spacer()
+//            Spacer()
             
             HStack(){
                 TextField("입력",text: $text)
@@ -60,6 +60,7 @@ struct MainView: View {
         .padding()
         
     }
+    
     
     func send(){
         guard !text.trimmingCharacters(in: .whitespaces).isEmpty else {
