@@ -23,16 +23,13 @@ struct MainView: View {
                         }
                     }
                 }
-//                .background(Color.red)
                 .onChange(of: model.last?.id) { id in
                     withAnimation{
                         proxy.scrollTo(id!, anchor: .bottom)
                     }
                 }
-                
             }
             .onAppear (perform : UIApplication.shared.hideKeyboard)
-//            Spacer()
             
             HStack(){
                 TextField("입력",text: $text)
@@ -51,7 +48,6 @@ struct MainView: View {
             .background(Color("myGray1"))
             .cornerRadius(50)
             
-            
         }
         .onAppear{
             mainViewModel.setup()
@@ -60,7 +56,6 @@ struct MainView: View {
         .padding()
         
     }
-    
     
     func send(){
         guard !text.trimmingCharacters(in: .whitespaces).isEmpty else {
@@ -72,7 +67,6 @@ struct MainView: View {
                 self.model.append(Message(id: UUID(), text: reponse , received: true))
             }
         }
-        
         self.text = ""
     }
 }

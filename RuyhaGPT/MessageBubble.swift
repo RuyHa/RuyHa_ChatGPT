@@ -23,10 +23,5 @@ struct MessageBubble: View {
         .frame(maxWidth: .infinity, alignment: message.received ? .leading : .trailing)
         .padding(message.received ? .trailing : .leading)
     }
+    
 }
-//
-//struct MessageBubble_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MessageBubble(message: Message(id: "1", text: "안녕하세요 새벽에 코딩하느라 정싱줄을 놓고 있는 휴면입니다.", received: true))
-//    }
-//} 
