@@ -36,10 +36,21 @@ struct MainView: View {
             
             HStack(){
                 TextField("입력",text: $text)
-                Button("전송"){
+                Button(action: {
                     send()
+                }) {
+                    Image(systemName: "paperplane.fill")
+                        .foregroundColor(.white)
+                        .padding(10)
+                        .background(Color("chatButtonColor"))
+                        .cornerRadius(50)
                 }
             }
+            .padding(.horizontal)
+            .padding(.vertical,5)
+            .background(Color("myGray1"))
+            .cornerRadius(50)
+            
             
         }
         .onAppear{
