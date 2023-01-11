@@ -28,7 +28,9 @@ struct MainView: View {
                         proxy.scrollTo(id!, anchor: .bottom)
                     }
                 }
+                
             }
+            .onAppear (perform : UIApplication.shared.hideKeyboard)
             
             Spacer()
             
@@ -38,11 +40,14 @@ struct MainView: View {
                     send()
                 }
             }
+            
         }
         .onAppear{
             mainViewModel.setup()
+            
         }
         .padding()
+        
     }
     
     func send(){
