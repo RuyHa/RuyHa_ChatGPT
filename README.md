@@ -3,9 +3,16 @@
   
 
 ##  주의사항
-ChatGPT API키는 숨김 처리 해놨습니다.    
-직접 발급후 사용해주세요.    
-(안하면 블럭 당할 수도 있다고 하여...)    
+ChatGPT API키는 직접 발급후 사용해주세요.
+MainViewModel.swift 파일의 setup()안의 코드를 수정해주세요.
+```swift
+    func setup(){
+        //https://beta.openai.com/account/api-keys 에서 키를 발급해 넣어주세요.
+        //아래의 예시 처럼 본인이 발급 받은 키를 넣어 수정해주시면됩니다.
+        //ex  client = OpenAISwift(authToken: "sk~~~~")
+        client = OpenAISwift(authToken: RuyhaKey.shared.chatGPTauthToken)
+    }
+```  
 
 ## 📝 설명
   
