@@ -32,7 +32,7 @@ struct MainView: View {
             .onAppear (perform : UIApplication.shared.hideKeyboard)
             
             HStack(){
-                TextField("입력",text: $text)
+                TextField("",text: $text)
                 Button(action: {
                     send()
                 }) {
@@ -51,7 +51,7 @@ struct MainView: View {
         }
         .onAppear{
             mainViewModel.setup()
-            
+            model.append(mainViewModel.setGuideMsg())
         }
         .padding()
         
@@ -69,6 +69,7 @@ struct MainView: View {
         }
         self.text = ""
     }
+    
 }
 
 struct MainView_Previews: PreviewProvider {

@@ -30,6 +30,7 @@ final class MainViewModel : ObservableObject {
         })
     }
     
+    // 한국어 응답의 경우 응답의 첫 두줄에 \n이 포함된 경우가 많아서 제거 하는 코드
     func removelineBreak(text:String)-> String{
         var myArray = Array(text)
         var count = 0
@@ -42,5 +43,10 @@ final class MainViewModel : ObservableObject {
         }
         myArray.removeSubrange(0..<count)
         return String(myArray)
+    }
+    
+    // 굳이 이렇게 안만들어도 되는데 MainView에 텍스트 길게 들어가는거 싫어서...
+    func setGuideMsg() -> Message{
+        Message(id: UUID(), text: "안녕하세요 저는 ChatGPT입니다.\n질문을 던져주세요." , received: true)
     }
 }
