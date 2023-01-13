@@ -12,7 +12,8 @@ MainViewModel.swift 파일의 setup()안의 코드를 수정해주세요.
         //ex  client = OpenAISwift(authToken: "sk~~~~")
         client = OpenAISwift(authToken: RuyhaKey.shared.chatGPTauthToken)
     }
-```  
+```
+해당 작업 이후 Ignore 폴더를 삭제해 주시면 실행 가능합니다.
 
 ## 📝 설명
   
