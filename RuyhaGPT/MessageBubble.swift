@@ -14,6 +14,7 @@ struct MessageBubble: View {
         VStack(alignment: message.received ? .leading : .trailing){
             HStack{
                 Text(message.text)
+                    .textSelection(.enabled)
                     .padding()
                     .background(message.received ? Color("gptChatColor") : Color("myChatColor"))
                     .cornerRadius(30)
